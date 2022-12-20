@@ -1,6 +1,15 @@
+import random
+
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler
 from pyftpdlib.servers import FTPServer
+
+BANNER = random.choice([
+    'FreeFloat Ftp Server (Version 1.00)',
+    '3Com 3CDaemon FTP Server Version 2.0',
+    'Ability Server 2.34',
+    'Sami FTP Server 2.0.2',
+])
 
 
 def main():
@@ -17,7 +26,7 @@ def main():
     handler.authorizer = authorizer
 
     # Define a customized banner (string returned when client connects)
-    handler.banner = "FreeFloat Ftp Server (Version 1.00)"
+    handler.banner = BANNER
 
     # Instantiate FTP server class and listen on 0.0.0.0:2121
     address = ('', 2121)
