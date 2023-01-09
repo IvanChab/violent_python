@@ -9,3 +9,6 @@ print('ftp' in services)
 print(services['ftp'])
 
 print("{<'+'>} Found vuln with FTP on port " + str(services['ftp']))
+
+for key in services.keys():
+    print(key)
