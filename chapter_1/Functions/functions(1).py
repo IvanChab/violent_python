@@ -14,7 +14,7 @@ def main():
     port = '21'
     banner1 = ret_banner(ip1, port)
     if banner1:
-        print('{+} ' + ip1 ': ' + banner1)
+        print('{+} ' + ip1 + ': ' + banner1)
     banner2 = ret_banner(ip2, port)
     if banner2:
         print('{+}' + ip2 + ': ' + banner2)
