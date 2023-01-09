@@ -1,3 +1,12 @@
+for x in range(1, 255):
+    print("192.168.95." + str(x))
+port_list = [21, 22, 25, 80, 110]
+for port in port_list:
+    print(port)
+for x in range(1, 255):
+    for port in port_list:
+        print("{+} Checking 192.168.95." + str(x) + ": " + str(port))
+
 import socket
 
 
@@ -16,7 +25,7 @@ def check_vulns(banner):
     if 'FreeFloat Ftp Server (Version 1.00)' in banner:
         print('{+} FreeFloat FTP Server is vulnerable.')
     elif '3Com 3CDaemon FTP Server Version 2.0' in banner:
-        print('3Com 3CDaemon FTP Server is vulnerable.')
+        print('{+} 3CDaemon FTP Server is vulnerable.')
     elif 'Ability Server 2.34' in banner:
         print('{+} Ability FTP Server is vulnerable.')
     elif 'Sami FTP Server 2.0.2' in banner:
@@ -27,21 +36,13 @@ def check_vulns(banner):
 
 
 def main():
-    ip1 = '192.168.95.148'
-    ip2 = '192.168.95.149'
-    ip3 = '192.168.95.150'
-    port = 21
-    banner1 = ret_banner(ip1, port)
-    if banner1:
-        print('{+} ' + ip1 + ': ' + banner1.strip('\n'))
-        check_vulns(banner1)
-    banner2 = ret_banner(ip2, port)
-    if banner2:
-        print('{+} ' + ip2 + ': ' + banner2.strip('\n'))
-        check_vulns(banner2)
-    banner3 = ret_banner(ip3, port)
-    if banner3:
-        print('{+} ' + ip3 + ': ' + banner3.strip('\n'))
-    check_vulns(banner3)
+    port_list = [21, 22, 25, 80, 110, 443]
+    for x in range(1, 255):
+        ip = '192.168.95.' + str(x)
+        for port in port_list:
+            banner = ret_banner(ip, port)
+        if banner:
+            print('{+} ' + ip + ': ' + banner)
+        check_vulns(banner)
     if __name__ == '__main__':
         main()

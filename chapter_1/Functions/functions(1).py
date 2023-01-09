@@ -1,4 +1,6 @@
 import socket
+
+
 def ret_banner(ip, port):
     try:
         socket.setdefaulttimeout(2)
@@ -8,6 +10,8 @@ def ret_banner(ip, port):
         return banner
     except:
         return
+
+
 def main():
     ip1 = '192.168.95.148'
     ip2 = '192.168.95.149'
