@@ -6,7 +6,6 @@ for port in port_list:
 for x in range(1, 255):
     for port in port_list:
         print("{+} Checking 192.168.95." + str(x) + ": " + str(port))
-
 import socket
 
 
