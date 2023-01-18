@@ -5,7 +5,7 @@ print(banner_mayuscula)
 banner_minuscula = banner.lower()
 print(banner_minuscula)
 
-banner_reemplazado = banner.replace('FreeFloat', 'Ivan')
+banner_reemplazado = banner.replace('FreeFloat', 'FreeFloat')
 print(banner_reemplazado)
 
 location_of_ftp = banner.find('FTP')

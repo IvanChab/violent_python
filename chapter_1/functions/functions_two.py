@@ -12,7 +12,7 @@ def ret_banner(ip, port):
         return
 
 
-def check_vulns(banner):
+def check_vulnerabilities(banner):
     if 'FreeFloat Ftp Server (Version 1.00)' in banner:
         print('{+} FreeFloat FTP Server is vulnerable.')
     elif '3Com 3CDaemon FTP Server Version 2.0' in banner:
@@ -27,21 +27,21 @@ def check_vulns(banner):
 
 
 def main():
-    ip1 = '192.168.95.148'
-    ip2 = '192.168.95.149'
-    ip3 = '192.168.95.150'
+    ip1 = 'localhost'
+    ip2 = 'localhost'
+    ip3 = 'localhost'
     port = 21
     banner1 = ret_banner(ip1, port)
     if banner1:
         print('{+} ' + ip1 + ': ' + banner1.strip('\n'))
-        check_vulns(banner1)
+        check_vulnerabilities(banner1)
     banner2 = ret_banner(ip2, port)
     if banner2:
         print('{+} ' + ip2 + ': ' + banner2.strip('\n'))
-        check_vulns(banner2)
+        check_vulnerabilities(banner2)
     banner3 = ret_banner(ip3, port)
     if banner3:
         print('{+} ' + ip3 + ': ' + banner3.strip('\n'))
-    check_vulns(banner3)
+    check_vulnerabilities(banner3)
     if __name__ == '__main__':
         main()

@@ -6,7 +6,7 @@ for port in port_list:
 for x in range(1, 255):
     for port in port_list:
         print("{+} Checking 192.168.95." + str(x) + ": " + str(port))
-import socket
+        import socket
 
 
 def ret_banner(ip, port):
@@ -20,7 +20,7 @@ def ret_banner(ip, port):
         return
 
 
-def check_vulns(banner):
+def check_vulnerabilities(banner):
     if 'FreeFloat Ftp Server (Version 1.00)' in banner:
         print('{+} FreeFloat FTP Server is vulnerable.')
     elif '3Com 3CDaemon FTP Server Version 2.0' in banner:
@@ -42,6 +42,6 @@ def main():
             banner = ret_banner(ip, port)
         if banner:
             print('{+} ' + ip + ': ' + banner)
-        check_vulns(banner)
+        check_vulnerabilities(banner)
     if __name__ == '__main__':
         main()

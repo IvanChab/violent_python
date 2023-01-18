@@ -1,8 +1,4 @@
-port_list = []
-port_list.append(21)
-port_list.append(80)
-port_list.append(443)
-port_list.append(25)
+port_list = [21, 80, 443, 25]
 print(port_list)
 
 port_list.sort()

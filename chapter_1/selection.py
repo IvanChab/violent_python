@@ -8,7 +8,7 @@ ans = ans.decode()
 ans = ans.strip()
 ans = ans[4:]
 
-if "FreeFloat Ftp Server (Version 1.00)" in ans:
+if "FreeFloat Ftp Server Version 1.00" in ans:
     print("{+} FreeFloat FTP Server is vulnerable.")
 elif "3Com 3CDaemon FTP Server Version 2.0" in ans:
     print("{+} 3CDaemon FTP Server is vulnerable.")

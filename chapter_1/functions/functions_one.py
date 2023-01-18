@@ -12,10 +12,10 @@ def ret_banner(ip, port):
         return
 
 
-def main():
-    ip1 = '192.168.95.148'
-    ip2 = '192.168.95.149'
-    port = '21'
+def main() -> object:
+    ip1 = 'localhost'
+    ip2 = 'localhost'
+    port = '2121'
     banner1 = ret_banner(ip1, port)
     if banner1:
         print('{+} ' + ip1 + ': ' + banner1)
