@@ -15,7 +15,7 @@ def ret_banner(ip, port):
 def main():
     ip1 = 'localhost'
     ip2 = 'localhost'
-    port = '2121'
+    port = 2121
 
     banner1 = ret_banner(ip1, port)
     if banner1:
