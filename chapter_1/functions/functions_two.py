@@ -7,6 +7,7 @@ def ret_banner(ip, port):
         s = socket.socket()
         s.connect((ip, port))
         banner = s.recv(1024)
+
         return banner
     except:
         return
@@ -31,17 +32,23 @@ def main():
     ip2 = 'localhost'
     ip3 = 'localhost'
     port = 21
+
     banner1 = ret_banner(ip1, port)
     if banner1:
         print('{+} ' + ip1 + ': ' + banner1.strip('\n'))
         check_vulnerabilities(banner1)
+
     banner2 = ret_banner(ip2, port)
     if banner2:
         print('{+} ' + ip2 + ': ' + banner2.strip('\n'))
         check_vulnerabilities(banner2)
+
     banner3 = ret_banner(ip3, port)
     if banner3:
         print('{+} ' + ip3 + ': ' + banner3.strip('\n'))
+
     check_vulnerabilities(banner3)
-    if __name__ == '__main__':
-        main()
+
+
+if __name__ == '__main__':
+    main()

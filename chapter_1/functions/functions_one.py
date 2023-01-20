@@ -12,7 +12,7 @@ def ret_banner(ip, port):
         return
 
 
-def main() -> object:
+def main():
     ip1 = 'localhost'
     ip2 = 'localhost'
     port = '2121'
