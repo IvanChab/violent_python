@@ -46,8 +46,7 @@ def main():
     banner3 = ret_banner(ip3, port)
     if banner3:
         print('{+} ' + ip3 + ': ' + banner3.strip('\n'))
-
-    check_vulnerabilities(banner3)
+        check_vulnerabilities(banner3)
 
 
 if __name__ == '__main__':
